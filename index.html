@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Java Web App - Sample UI</title>
+<title>Java Web Dashboard | Sangam Jai</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<header class="navbar">
-  <div class="logo">MyJavaApp</div>
-  <nav>Dashboard | Profile | Settings</nav>
-</header>
-<div class="container">
-  <h2>Welcome to Web Application</h2>
-  <p>This is a responsive JSP-style template built with HTML5, CSS3 and Vanilla JS.</p>
-  <div class="card">
-    <h3>User Details</h3>
-    <input type="text" id="username" placeholder="Enter username">
-    <button onclick="showGreeting()">Submit</button>
-    <p id="greet"></p>
-  </div>
+<div class="app">
+  <aside class="sidebar">
+    <h2><i class="fa-solid fa-leaf"></i> JavaApp</h2>
+    <a class="active"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+    <a><i class="fa-solid fa-users"></i> Users</a>
+    <a><i class="fa-solid fa-gear"></i> Settings</a>
+    <div class="profile"><p>Sangam Jai</p><small>Junior Java Dev - India</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <h3>Welcome back, Sangam!</h3>
+      <button class="btn">+ New Task</button>
+    </header>
+    <div class="stats">
+      <div class="stat"><h4>1,240</h4><p>Total Users</p><span>+12%</span></div>
+      <div class="stat"><h4>89%</h4><p>Server Uptime</p><span>Stable</span></div>
+      <div class="stat"><h4>32</h4><p>Pending JSP Tasks</p><span>Today</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h4>Recent Activity - JSP Integration Ready</h4><input type="text" id="search" onkeyup="filterTable()" placeholder="Search user..."></div>
+      <table id="userTable">
+        <tr><th>ID</th><th>Name</th><th>Role</th><th>Status</th></tr>
+        <tr><td>#101</td><td>Sangam</td><td>Frontend</td><td><span class="badge green">Active</span></td></tr>
+        <tr><td>#102</td><td>Amit</td><td>Backend</td><td><span class="badge green">Active</span></td></tr>
+        <tr><td>#103</td><td>Priya</td><td>UI/UX</td><td><span class="badge yellow">Pending</span></td></tr>
+      </table>
+      <div class="form-row">
+        <input type="text" id="newUser" placeholder="Add new user for demo">
+        <button onclick="addUser()" class="btn">Add & Render with JS</button>
+      </div>
+      <p id="msg"></p>
+    </div>
+  </main>
 </div>
-<footer>© 2026 MyJavaApp - Responsive & Pixel Perfect</footer>
 <script src="script.js"></script>
 </body>
 </html>
